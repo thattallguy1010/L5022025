@@ -1,1 +1,0 @@
-alias test show bgp evpn summary
