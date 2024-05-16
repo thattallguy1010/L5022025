@@ -24,8 +24,14 @@ all:
         spine3:
         spine4:
     LEAFS:
+      vars:
+        vlan_list:
+          - id: 100
+            name: DMZ
+          - id: 200
+            name: Internal 
       hosts:
         leaf1:
         leaf2:
         leaf3:
-        leaf4:          
+        leaf4:     

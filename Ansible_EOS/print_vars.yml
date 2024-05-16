@@ -1,7 +1,7 @@
 ---
 - name: Print out variables
-  hosts: leaf1
+  hosts: leaf4
   tasks:
     - name: Print variable
       ansible.builtin.debug:
-        msg: "{{ water }}"
+        msg: "{{ vlan_id }}"

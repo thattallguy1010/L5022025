@@ -1,10 +1,14 @@
 ---
-- name: Add VLAN to device(s)
-  hosts: leaf1
+- name: Add VLANs to device(s)
+  hosts: leaf4
+  vars_files:
+    - vars/vlans.yml
   tasks:
-    - name: Add VLAN 10
+    - name: Add VLAN 
       arista.eos.eos_vlans:
         config:
-          - vlan_id: 10
+          - vlan_id: "{{ item.id }}"
             state: active
         state: merged
+      loop: "{{ vlan_list }}"
+
