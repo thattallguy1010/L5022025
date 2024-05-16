@@ -1,7 +1,0 @@
----
-- name: Print out variables
-  hosts: leaf4
-  tasks:
-    - name: Print variable
-      ansible.builtin.debug:
-        msg: "{{ vlan_id }}"
