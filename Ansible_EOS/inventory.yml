@@ -2,7 +2,6 @@ all:
   vars:
     ansible_user: arista
     ansible_network_os: eos
-# This section has Ansible connect to the eAPI interface
     ansible_password: arista1234
     ansible_connection: httpapi
     ansible_httpapi_use_ssl: True
@@ -17,13 +16,13 @@ all:
 #     ansible_connection: network_cli
 #     ansible_network_os: eos
   children:
-    SPINES:
+    spines:
       hosts:
         spine1:
         spine2:
         spine3:
         spine4:
-    LEAFS:
+    leafs:
       hosts:
         leaf1:
         leaf2:
