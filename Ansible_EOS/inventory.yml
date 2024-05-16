@@ -3,7 +3,7 @@ all:
     ansible_user: arista
     ansible_network_os: eos
 # This section has Ansible connect to the eAPI interface
-    ansible_password: arista6ycd
+    ansible_password: arista1234
     ansible_connection: httpapi
     ansible_httpapi_use_ssl: True
     ansible_httpapi_validate_certs: False
@@ -24,12 +24,6 @@ all:
         spine3:
         spine4:
     LEAFS:
-      vars:
-        vlan_list:
-          - id: 100
-            name: DMZ
-          - id: 200
-            name: Internal 
       hosts:
         leaf1:
         leaf2:
