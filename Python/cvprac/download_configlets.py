@@ -10,7 +10,7 @@ cvp1 = "192.168.0.5"
 # cvp2 = ""
 # cvp3 = ""
 cvp_user = "arista"
-cvp_pw = "arista6ycd"
+cvp_pw = "arista1234"
 
 client = cvp_client.CvpClient()
 

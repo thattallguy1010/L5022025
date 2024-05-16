@@ -70,7 +70,7 @@ l3leaf:
 
 
 # There's an issue with vEOS with larger MTUs
-p2p_uplinks_mtu: 1500
+p2p_uplinks_mtu: 1550
 
 # BFD Settings
 bfd_multihop:
@@ -78,16 +78,6 @@ bfd_multihop:
   min_rx: 1200
   multiplier: 3
 
-
-# # If you want to put a password on peers
-# bgp_peer_groups:
-#   # all passwords set to "arista"
-#   evpn_overlay_peers:
-#     password: Q4fqtbqcZ7oQuKfuWtNGRQ==
-#   ipv4_underlay_peers:
-#     password: 7x4B4rnJhZB438m9+BrBfQ==
-#   mlag_ipv4_underlay_peer:
-#     password: 4b21pAdCvWeAqpcKDFMdWw==
 
 # Needed for vEOS/cEOS
 
