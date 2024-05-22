@@ -1,7 +1,0 @@
----
-- name: Reset lab to default configlet profile
-  hosts: cvp1
-  tasks:
-    - name: Run change control without interaction
-      arista.cvp.cv_task_v3:
-        tasks: [21, 22, 23]
