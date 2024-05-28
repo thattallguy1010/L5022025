@@ -15,6 +15,7 @@
     - name: Build default container topology
       arista.cvp.cv_container_v3:
         topology: "{{ CONTAINERS_DEFAULT }}"
+        apply_mode: strict
     - name: Apply configlets for default config
       arista.cvp.cv_device_v3:
         devices: "{{ CVP_DEVICES_DEFAULT }}"
