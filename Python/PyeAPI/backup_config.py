@@ -18,3 +18,4 @@ for switch in switches:
     file.write(running_config)
     file.close()
     print(f"Backing up {switch}")
+    #
