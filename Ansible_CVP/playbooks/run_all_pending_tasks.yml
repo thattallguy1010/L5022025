@@ -11,3 +11,4 @@
     - name: Run pending tasks
       arista.cvp.cv_task_v3:
         tasks: "{{ CVP_FACTS.data.cvp_tasks | list }}"
+        #
