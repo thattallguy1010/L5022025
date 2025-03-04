@@ -110,3 +110,20 @@ dns_domain: atd.lab
 mgmt_interface: Management0
 mgmt_interface_vrf: MGMT
 mgmt_gateway: 192.168.0.1
+
+snmp_settings:
+  contact: "stevenforster10@gmail.com"
+  location: "DC1"
+  users:
+    - name: "SNMPv3Admin"
+      group: "network-admin"
+      version: "v3"
+      auth: "sha"
+      auth_passphrase: "arista5ufc"
+      priv: "aes"
+      priv_passphrase: "arista5ufc"
+  hosts:
+    - host: "host1"
+      version: "3"
+      username: "SNMPv3Admin"
+      vrf: "MGMT"
