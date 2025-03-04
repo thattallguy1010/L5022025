@@ -122,8 +122,3 @@ snmp_settings:
       auth_passphrase: "arista5ufc"
       priv: "aes"
       priv_passphrase: "arista5ufc"
-  hosts:
-    - host: "host1"
-      version: "3"
-      username: "SNMPv3Admin"
-      vrf: "MGMT"
