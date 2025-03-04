@@ -113,7 +113,6 @@ mgmt_gateway: 192.168.0.1
 
 snmp_settings:
   contact: "stevenforster10@gmail.com"
-  location: "DC1"
   users:
     - name: "SNMPv3Admin"
       group: "network-admin"
