@@ -1,8 +1,10 @@
 cvp_configlets:
   AVD_leaf1: "!RANCID-CONTENT-TYPE: arista\n!\nvlan internal order ascending range
     1006 1199\n!\ntransceiver qsfp default-mode 4x10G\n!\nservice routing protocols
-    model multi-agent\n!\nhostname leaf1\ndns domain atd.lab\n!\nspanning-tree mode
-    mstp\nno spanning-tree vlan-id 4093-4094\nspanning-tree mst 0 priority 16384\n!\nno
+    model multi-agent\n!\nhostname leaf1\ndns domain atd.lab\n!\nsnmp-server contact
+    stevenforster10@gmail.com\nsnmp-server location FABRIC leaf1\nsnmp-server user
+    SNMPv3Admin network-admin v3 auth sha arista5ufc priv aes arista5ufc\n!\nspanning-tree
+    mode mstp\nno spanning-tree vlan-id 4093-4094\nspanning-tree mst 0 priority 16384\n!\nno
     enable password\nno aaa root\n!\nvlan 10\n   name DMZ\n!\nvlan 20\n   name Internal\n!\nvlan
     3009\n   name MLAG_iBGP_VRF_A\n   trunk group LEAF_PEER_L3\n!\nvlan 4093\n   name
     LEAF_PEER_L3\n   trunk group LEAF_PEER_L3\n!\nvlan 4094\n   name MLAG_PEER\n   trunk
@@ -86,8 +88,10 @@ cvp_configlets:
     \  !\n   vrf MGMT\n      no shutdown\n!\nend\n"
   AVD_leaf2: "!RANCID-CONTENT-TYPE: arista\n!\nvlan internal order ascending range
     1006 1199\n!\ntransceiver qsfp default-mode 4x10G\n!\nservice routing protocols
-    model multi-agent\n!\nhostname leaf2\ndns domain atd.lab\n!\nspanning-tree mode
-    mstp\nno spanning-tree vlan-id 4093-4094\nspanning-tree mst 0 priority 16384\n!\nno
+    model multi-agent\n!\nhostname leaf2\ndns domain atd.lab\n!\nsnmp-server contact
+    stevenforster10@gmail.com\nsnmp-server location FABRIC leaf2\nsnmp-server user
+    SNMPv3Admin network-admin v3 auth sha arista5ufc priv aes arista5ufc\n!\nspanning-tree
+    mode mstp\nno spanning-tree vlan-id 4093-4094\nspanning-tree mst 0 priority 16384\n!\nno
     enable password\nno aaa root\n!\nvlan 10\n   name DMZ\n!\nvlan 20\n   name Internal\n!\nvlan
     3009\n   name MLAG_iBGP_VRF_A\n   trunk group LEAF_PEER_L3\n!\nvlan 4093\n   name
     LEAF_PEER_L3\n   trunk group LEAF_PEER_L3\n!\nvlan 4094\n   name MLAG_PEER\n   trunk
@@ -171,8 +175,10 @@ cvp_configlets:
     \  !\n   vrf MGMT\n      no shutdown\n!\nend\n"
   AVD_leaf3: "!RANCID-CONTENT-TYPE: arista\n!\nvlan internal order ascending range
     1006 1199\n!\ntransceiver qsfp default-mode 4x10G\n!\nservice routing protocols
-    model multi-agent\n!\nhostname leaf3\ndns domain atd.lab\n!\nspanning-tree mode
-    mstp\nno spanning-tree vlan-id 4093-4094\nspanning-tree mst 0 priority 16384\n!\nno
+    model multi-agent\n!\nhostname leaf3\ndns domain atd.lab\n!\nsnmp-server contact
+    stevenforster10@gmail.com\nsnmp-server location FABRIC leaf3\nsnmp-server user
+    SNMPv3Admin network-admin v3 auth sha arista5ufc priv aes arista5ufc\n!\nspanning-tree
+    mode mstp\nno spanning-tree vlan-id 4093-4094\nspanning-tree mst 0 priority 16384\n!\nno
     enable password\nno aaa root\n!\nvlan 10\n   name DMZ\n!\nvlan 20\n   name Internal\n!\nvlan
     3009\n   name MLAG_iBGP_VRF_A\n   trunk group LEAF_PEER_L3\n!\nvlan 4093\n   name
     LEAF_PEER_L3\n   trunk group LEAF_PEER_L3\n!\nvlan 4094\n   name MLAG_PEER\n   trunk
@@ -256,8 +262,10 @@ cvp_configlets:
     \  !\n   vrf MGMT\n      no shutdown\n!\nend\n"
   AVD_leaf4: "!RANCID-CONTENT-TYPE: arista\n!\nvlan internal order ascending range
     1006 1199\n!\ntransceiver qsfp default-mode 4x10G\n!\nservice routing protocols
-    model multi-agent\n!\nhostname leaf4\ndns domain atd.lab\n!\nspanning-tree mode
-    mstp\nno spanning-tree vlan-id 4093-4094\nspanning-tree mst 0 priority 16384\n!\nno
+    model multi-agent\n!\nhostname leaf4\ndns domain atd.lab\n!\nsnmp-server contact
+    stevenforster10@gmail.com\nsnmp-server location FABRIC leaf4\nsnmp-server user
+    SNMPv3Admin network-admin v3 auth sha arista5ufc priv aes arista5ufc\n!\nspanning-tree
+    mode mstp\nno spanning-tree vlan-id 4093-4094\nspanning-tree mst 0 priority 16384\n!\nno
     enable password\nno aaa root\n!\nvlan 10\n   name DMZ\n!\nvlan 20\n   name Internal\n!\nvlan
     3009\n   name MLAG_iBGP_VRF_A\n   trunk group LEAF_PEER_L3\n!\nvlan 4093\n   name
     LEAF_PEER_L3\n   trunk group LEAF_PEER_L3\n!\nvlan 4094\n   name MLAG_PEER\n   trunk
@@ -343,26 +351,28 @@ cvp_configlets:
     \  protocol https\n   no shutdown\n   !\n   vrf MGMT\n      no shutdown\n!\nend\n"
   AVD_spine1: "!RANCID-CONTENT-TYPE: arista\n!\nvlan internal order ascending range
     1006 1199\n!\ntransceiver qsfp default-mode 4x10G\n!\nservice routing protocols
-    model multi-agent\n!\nhostname spine1\ndns domain atd.lab\n!\nspanning-tree mode
-    none\n!\nno enable password\nno aaa root\n!\nvrf instance MGMT\n!\ninterface Ethernet3\n
-    \  description P2P_LINK_TO_LEAF1_Ethernet3\n   no shutdown\n   mtu 1500\n   no
-    switchport\n   ip address 192.168.103.0/31\n!\ninterface Ethernet4\n   description
-    P2P_LINK_TO_LEAF2_Ethernet3\n   no shutdown\n   mtu 1500\n   no switchport\n   ip
-    address 192.168.103.8/31\n!\ninterface Ethernet5\n   description P2P_LINK_TO_LEAF3_Ethernet3\n
-    \  no shutdown\n   mtu 1500\n   no switchport\n   ip address 192.168.103.16/31\n!\ninterface
-    Ethernet6\n   description P2P_LINK_TO_LEAF4_Ethernet3\n   no shutdown\n   mtu
-    1500\n   no switchport\n   ip address 192.168.103.24/31\n!\ninterface Loopback0\n
-    \  description EVPN_Overlay_Peering\n   no shutdown\n   ip address 192.168.101.11/32\n!\ninterface
-    Management0\n   description oob_management\n   no shutdown\n   vrf MGMT\n   ip
-    address 192.168.0.11/24\n!\nip routing\nno ip routing vrf MGMT\n!\nip prefix-list
-    PL-LOOPBACKS-EVPN-OVERLAY\n   seq 10 permit 192.168.101.0/24 eq 32\n!\nip route
-    vrf MGMT 0.0.0.0/0 192.168.0.1\n!\nroute-map RM-CONN-2-BGP permit 10\n   match
-    ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY\n!\nrouter bfd\n   multihop interval
-    1200 min-rx 1200 multiplier 3\n!\nrouter bgp 65001\n   router-id 192.168.101.11\n
-    \  maximum-paths 4 ecmp 4\n   no bgp default ipv4-unicast\n   no bgp default ipv4-unicast\n
-    \  distance bgp 20 200 200\n   neighbor EVPN-OVERLAY-PEERS peer group\n   neighbor
-    EVPN-OVERLAY-PEERS next-hop-unchanged\n   neighbor EVPN-OVERLAY-PEERS update-source
-    Loopback0\n   neighbor EVPN-OVERLAY-PEERS bfd\n   neighbor EVPN-OVERLAY-PEERS
+    model multi-agent\n!\nhostname spine1\ndns domain atd.lab\n!\nsnmp-server contact
+    stevenforster10@gmail.com\nsnmp-server location FABRIC spine1\nsnmp-server user
+    SNMPv3Admin network-admin v3 auth sha arista5ufc priv aes arista5ufc\n!\nspanning-tree
+    mode none\n!\nno enable password\nno aaa root\n!\nvrf instance MGMT\n!\ninterface
+    Ethernet3\n   description P2P_LINK_TO_LEAF1_Ethernet3\n   no shutdown\n   mtu
+    1500\n   no switchport\n   ip address 192.168.103.0/31\n!\ninterface Ethernet4\n
+    \  description P2P_LINK_TO_LEAF2_Ethernet3\n   no shutdown\n   mtu 1500\n   no
+    switchport\n   ip address 192.168.103.8/31\n!\ninterface Ethernet5\n   description
+    P2P_LINK_TO_LEAF3_Ethernet3\n   no shutdown\n   mtu 1500\n   no switchport\n   ip
+    address 192.168.103.16/31\n!\ninterface Ethernet6\n   description P2P_LINK_TO_LEAF4_Ethernet3\n
+    \  no shutdown\n   mtu 1500\n   no switchport\n   ip address 192.168.103.24/31\n!\ninterface
+    Loopback0\n   description EVPN_Overlay_Peering\n   no shutdown\n   ip address
+    192.168.101.11/32\n!\ninterface Management0\n   description oob_management\n   no
+    shutdown\n   vrf MGMT\n   ip address 192.168.0.11/24\n!\nip routing\nno ip routing
+    vrf MGMT\n!\nip prefix-list PL-LOOPBACKS-EVPN-OVERLAY\n   seq 10 permit 192.168.101.0/24
+    eq 32\n!\nip route vrf MGMT 0.0.0.0/0 192.168.0.1\n!\nroute-map RM-CONN-2-BGP
+    permit 10\n   match ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY\n!\nrouter
+    bfd\n   multihop interval 1200 min-rx 1200 multiplier 3\n!\nrouter bgp 65001\n
+    \  router-id 192.168.101.11\n   maximum-paths 4 ecmp 4\n   no bgp default ipv4-unicast\n
+    \  no bgp default ipv4-unicast\n   distance bgp 20 200 200\n   neighbor EVPN-OVERLAY-PEERS
+    peer group\n   neighbor EVPN-OVERLAY-PEERS next-hop-unchanged\n   neighbor EVPN-OVERLAY-PEERS
+    update-source Loopback0\n   neighbor EVPN-OVERLAY-PEERS bfd\n   neighbor EVPN-OVERLAY-PEERS
     ebgp-multihop 3\n   neighbor EVPN-OVERLAY-PEERS send-community\n   neighbor EVPN-OVERLAY-PEERS
     maximum-routes 0\n   neighbor IPv4-UNDERLAY-PEERS peer group\n   neighbor IPv4-UNDERLAY-PEERS
     send-community\n   neighbor IPv4-UNDERLAY-PEERS maximum-routes 12000\n   neighbor
@@ -387,26 +397,28 @@ cvp_configlets:
     shutdown\n!\nend\n"
   AVD_spine2: "!RANCID-CONTENT-TYPE: arista\n!\nvlan internal order ascending range
     1006 1199\n!\ntransceiver qsfp default-mode 4x10G\n!\nservice routing protocols
-    model multi-agent\n!\nhostname spine2\ndns domain atd.lab\n!\nspanning-tree mode
-    none\n!\nno enable password\nno aaa root\n!\nvrf instance MGMT\n!\ninterface Ethernet3\n
-    \  description P2P_LINK_TO_LEAF1_Ethernet4\n   no shutdown\n   mtu 1500\n   no
-    switchport\n   ip address 192.168.103.2/31\n!\ninterface Ethernet4\n   description
-    P2P_LINK_TO_LEAF2_Ethernet4\n   no shutdown\n   mtu 1500\n   no switchport\n   ip
-    address 192.168.103.10/31\n!\ninterface Ethernet5\n   description P2P_LINK_TO_LEAF3_Ethernet4\n
-    \  no shutdown\n   mtu 1500\n   no switchport\n   ip address 192.168.103.18/31\n!\ninterface
-    Ethernet6\n   description P2P_LINK_TO_LEAF4_Ethernet4\n   no shutdown\n   mtu
-    1500\n   no switchport\n   ip address 192.168.103.26/31\n!\ninterface Loopback0\n
-    \  description EVPN_Overlay_Peering\n   no shutdown\n   ip address 192.168.101.12/32\n!\ninterface
-    Management0\n   description oob_management\n   no shutdown\n   vrf MGMT\n   ip
-    address 192.168.0.12/24\n!\nip routing\nno ip routing vrf MGMT\n!\nip prefix-list
-    PL-LOOPBACKS-EVPN-OVERLAY\n   seq 10 permit 192.168.101.0/24 eq 32\n!\nip route
-    vrf MGMT 0.0.0.0/0 192.168.0.1\n!\nroute-map RM-CONN-2-BGP permit 10\n   match
-    ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY\n!\nrouter bfd\n   multihop interval
-    1200 min-rx 1200 multiplier 3\n!\nrouter bgp 65001\n   router-id 192.168.101.12\n
-    \  maximum-paths 4 ecmp 4\n   no bgp default ipv4-unicast\n   no bgp default ipv4-unicast\n
-    \  distance bgp 20 200 200\n   neighbor EVPN-OVERLAY-PEERS peer group\n   neighbor
-    EVPN-OVERLAY-PEERS next-hop-unchanged\n   neighbor EVPN-OVERLAY-PEERS update-source
-    Loopback0\n   neighbor EVPN-OVERLAY-PEERS bfd\n   neighbor EVPN-OVERLAY-PEERS
+    model multi-agent\n!\nhostname spine2\ndns domain atd.lab\n!\nsnmp-server contact
+    stevenforster10@gmail.com\nsnmp-server location FABRIC spine2\nsnmp-server user
+    SNMPv3Admin network-admin v3 auth sha arista5ufc priv aes arista5ufc\n!\nspanning-tree
+    mode none\n!\nno enable password\nno aaa root\n!\nvrf instance MGMT\n!\ninterface
+    Ethernet3\n   description P2P_LINK_TO_LEAF1_Ethernet4\n   no shutdown\n   mtu
+    1500\n   no switchport\n   ip address 192.168.103.2/31\n!\ninterface Ethernet4\n
+    \  description P2P_LINK_TO_LEAF2_Ethernet4\n   no shutdown\n   mtu 1500\n   no
+    switchport\n   ip address 192.168.103.10/31\n!\ninterface Ethernet5\n   description
+    P2P_LINK_TO_LEAF3_Ethernet4\n   no shutdown\n   mtu 1500\n   no switchport\n   ip
+    address 192.168.103.18/31\n!\ninterface Ethernet6\n   description P2P_LINK_TO_LEAF4_Ethernet4\n
+    \  no shutdown\n   mtu 1500\n   no switchport\n   ip address 192.168.103.26/31\n!\ninterface
+    Loopback0\n   description EVPN_Overlay_Peering\n   no shutdown\n   ip address
+    192.168.101.12/32\n!\ninterface Management0\n   description oob_management\n   no
+    shutdown\n   vrf MGMT\n   ip address 192.168.0.12/24\n!\nip routing\nno ip routing
+    vrf MGMT\n!\nip prefix-list PL-LOOPBACKS-EVPN-OVERLAY\n   seq 10 permit 192.168.101.0/24
+    eq 32\n!\nip route vrf MGMT 0.0.0.0/0 192.168.0.1\n!\nroute-map RM-CONN-2-BGP
+    permit 10\n   match ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY\n!\nrouter
+    bfd\n   multihop interval 1200 min-rx 1200 multiplier 3\n!\nrouter bgp 65001\n
+    \  router-id 192.168.101.12\n   maximum-paths 4 ecmp 4\n   no bgp default ipv4-unicast\n
+    \  no bgp default ipv4-unicast\n   distance bgp 20 200 200\n   neighbor EVPN-OVERLAY-PEERS
+    peer group\n   neighbor EVPN-OVERLAY-PEERS next-hop-unchanged\n   neighbor EVPN-OVERLAY-PEERS
+    update-source Loopback0\n   neighbor EVPN-OVERLAY-PEERS bfd\n   neighbor EVPN-OVERLAY-PEERS
     ebgp-multihop 3\n   neighbor EVPN-OVERLAY-PEERS send-community\n   neighbor EVPN-OVERLAY-PEERS
     maximum-routes 0\n   neighbor IPv4-UNDERLAY-PEERS peer group\n   neighbor IPv4-UNDERLAY-PEERS
     send-community\n   neighbor IPv4-UNDERLAY-PEERS maximum-routes 12000\n   neighbor
@@ -431,26 +443,28 @@ cvp_configlets:
     shutdown\n!\nend\n"
   AVD_spine3: "!RANCID-CONTENT-TYPE: arista\n!\nvlan internal order ascending range
     1006 1199\n!\ntransceiver qsfp default-mode 4x10G\n!\nservice routing protocols
-    model multi-agent\n!\nhostname spine3\ndns domain atd.lab\n!\nspanning-tree mode
-    none\n!\nno enable password\nno aaa root\n!\nvrf instance MGMT\n!\ninterface Ethernet3\n
-    \  description P2P_LINK_TO_LEAF1_Ethernet5\n   no shutdown\n   mtu 1500\n   no
-    switchport\n   ip address 192.168.103.4/31\n!\ninterface Ethernet4\n   description
-    P2P_LINK_TO_LEAF2_Ethernet5\n   no shutdown\n   mtu 1500\n   no switchport\n   ip
-    address 192.168.103.12/31\n!\ninterface Ethernet5\n   description P2P_LINK_TO_LEAF3_Ethernet5\n
-    \  no shutdown\n   mtu 1500\n   no switchport\n   ip address 192.168.103.20/31\n!\ninterface
-    Ethernet6\n   description P2P_LINK_TO_LEAF4_Ethernet5\n   no shutdown\n   mtu
-    1500\n   no switchport\n   ip address 192.168.103.28/31\n!\ninterface Loopback0\n
-    \  description EVPN_Overlay_Peering\n   no shutdown\n   ip address 192.168.101.13/32\n!\ninterface
-    Management0\n   description oob_management\n   no shutdown\n   vrf MGMT\n   ip
-    address 192.168.0.13/24\n!\nip routing\nno ip routing vrf MGMT\n!\nip prefix-list
-    PL-LOOPBACKS-EVPN-OVERLAY\n   seq 10 permit 192.168.101.0/24 eq 32\n!\nip route
-    vrf MGMT 0.0.0.0/0 192.168.0.1\n!\nroute-map RM-CONN-2-BGP permit 10\n   match
-    ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY\n!\nrouter bfd\n   multihop interval
-    1200 min-rx 1200 multiplier 3\n!\nrouter bgp 65001\n   router-id 192.168.101.13\n
-    \  maximum-paths 4 ecmp 4\n   no bgp default ipv4-unicast\n   no bgp default ipv4-unicast\n
-    \  distance bgp 20 200 200\n   neighbor EVPN-OVERLAY-PEERS peer group\n   neighbor
-    EVPN-OVERLAY-PEERS next-hop-unchanged\n   neighbor EVPN-OVERLAY-PEERS update-source
-    Loopback0\n   neighbor EVPN-OVERLAY-PEERS bfd\n   neighbor EVPN-OVERLAY-PEERS
+    model multi-agent\n!\nhostname spine3\ndns domain atd.lab\n!\nsnmp-server contact
+    stevenforster10@gmail.com\nsnmp-server location FABRIC spine3\nsnmp-server user
+    SNMPv3Admin network-admin v3 auth sha arista5ufc priv aes arista5ufc\n!\nspanning-tree
+    mode none\n!\nno enable password\nno aaa root\n!\nvrf instance MGMT\n!\ninterface
+    Ethernet3\n   description P2P_LINK_TO_LEAF1_Ethernet5\n   no shutdown\n   mtu
+    1500\n   no switchport\n   ip address 192.168.103.4/31\n!\ninterface Ethernet4\n
+    \  description P2P_LINK_TO_LEAF2_Ethernet5\n   no shutdown\n   mtu 1500\n   no
+    switchport\n   ip address 192.168.103.12/31\n!\ninterface Ethernet5\n   description
+    P2P_LINK_TO_LEAF3_Ethernet5\n   no shutdown\n   mtu 1500\n   no switchport\n   ip
+    address 192.168.103.20/31\n!\ninterface Ethernet6\n   description P2P_LINK_TO_LEAF4_Ethernet5\n
+    \  no shutdown\n   mtu 1500\n   no switchport\n   ip address 192.168.103.28/31\n!\ninterface
+    Loopback0\n   description EVPN_Overlay_Peering\n   no shutdown\n   ip address
+    192.168.101.13/32\n!\ninterface Management0\n   description oob_management\n   no
+    shutdown\n   vrf MGMT\n   ip address 192.168.0.13/24\n!\nip routing\nno ip routing
+    vrf MGMT\n!\nip prefix-list PL-LOOPBACKS-EVPN-OVERLAY\n   seq 10 permit 192.168.101.0/24
+    eq 32\n!\nip route vrf MGMT 0.0.0.0/0 192.168.0.1\n!\nroute-map RM-CONN-2-BGP
+    permit 10\n   match ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY\n!\nrouter
+    bfd\n   multihop interval 1200 min-rx 1200 multiplier 3\n!\nrouter bgp 65001\n
+    \  router-id 192.168.101.13\n   maximum-paths 4 ecmp 4\n   no bgp default ipv4-unicast\n
+    \  no bgp default ipv4-unicast\n   distance bgp 20 200 200\n   neighbor EVPN-OVERLAY-PEERS
+    peer group\n   neighbor EVPN-OVERLAY-PEERS next-hop-unchanged\n   neighbor EVPN-OVERLAY-PEERS
+    update-source Loopback0\n   neighbor EVPN-OVERLAY-PEERS bfd\n   neighbor EVPN-OVERLAY-PEERS
     ebgp-multihop 3\n   neighbor EVPN-OVERLAY-PEERS send-community\n   neighbor EVPN-OVERLAY-PEERS
     maximum-routes 0\n   neighbor IPv4-UNDERLAY-PEERS peer group\n   neighbor IPv4-UNDERLAY-PEERS
     send-community\n   neighbor IPv4-UNDERLAY-PEERS maximum-routes 12000\n   neighbor
@@ -475,26 +489,28 @@ cvp_configlets:
     shutdown\n!\nend\n"
   AVD_spine4: "!RANCID-CONTENT-TYPE: arista\n!\nvlan internal order ascending range
     1006 1199\n!\ntransceiver qsfp default-mode 4x10G\n!\nservice routing protocols
-    model multi-agent\n!\nhostname spine4\ndns domain atd.lab\n!\nspanning-tree mode
-    none\n!\nno enable password\nno aaa root\n!\nvrf instance MGMT\n!\ninterface Ethernet3\n
-    \  description P2P_LINK_TO_LEAF1_Ethernet6\n   no shutdown\n   mtu 1500\n   no
-    switchport\n   ip address 192.168.103.6/31\n!\ninterface Ethernet4\n   description
-    P2P_LINK_TO_LEAF2_Ethernet6\n   no shutdown\n   mtu 1500\n   no switchport\n   ip
-    address 192.168.103.14/31\n!\ninterface Ethernet5\n   description P2P_LINK_TO_LEAF3_Ethernet6\n
-    \  no shutdown\n   mtu 1500\n   no switchport\n   ip address 192.168.103.22/31\n!\ninterface
-    Ethernet6\n   description P2P_LINK_TO_LEAF4_Ethernet6\n   no shutdown\n   mtu
-    1500\n   no switchport\n   ip address 192.168.103.30/31\n!\ninterface Loopback0\n
-    \  description EVPN_Overlay_Peering\n   no shutdown\n   ip address 192.168.101.14/32\n!\ninterface
-    Management0\n   description oob_management\n   no shutdown\n   vrf MGMT\n   ip
-    address 192.168.0.14/24\n!\nip routing\nno ip routing vrf MGMT\n!\nip prefix-list
-    PL-LOOPBACKS-EVPN-OVERLAY\n   seq 10 permit 192.168.101.0/24 eq 32\n!\nip route
-    vrf MGMT 0.0.0.0/0 192.168.0.1\n!\nroute-map RM-CONN-2-BGP permit 10\n   match
-    ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY\n!\nrouter bfd\n   multihop interval
-    1200 min-rx 1200 multiplier 3\n!\nrouter bgp 65001\n   router-id 192.168.101.14\n
-    \  maximum-paths 4 ecmp 4\n   no bgp default ipv4-unicast\n   no bgp default ipv4-unicast\n
-    \  distance bgp 20 200 200\n   neighbor EVPN-OVERLAY-PEERS peer group\n   neighbor
-    EVPN-OVERLAY-PEERS next-hop-unchanged\n   neighbor EVPN-OVERLAY-PEERS update-source
-    Loopback0\n   neighbor EVPN-OVERLAY-PEERS bfd\n   neighbor EVPN-OVERLAY-PEERS
+    model multi-agent\n!\nhostname spine4\ndns domain atd.lab\n!\nsnmp-server contact
+    stevenforster10@gmail.com\nsnmp-server location FABRIC spine4\nsnmp-server user
+    SNMPv3Admin network-admin v3 auth sha arista5ufc priv aes arista5ufc\n!\nspanning-tree
+    mode none\n!\nno enable password\nno aaa root\n!\nvrf instance MGMT\n!\ninterface
+    Ethernet3\n   description P2P_LINK_TO_LEAF1_Ethernet6\n   no shutdown\n   mtu
+    1500\n   no switchport\n   ip address 192.168.103.6/31\n!\ninterface Ethernet4\n
+    \  description P2P_LINK_TO_LEAF2_Ethernet6\n   no shutdown\n   mtu 1500\n   no
+    switchport\n   ip address 192.168.103.14/31\n!\ninterface Ethernet5\n   description
+    P2P_LINK_TO_LEAF3_Ethernet6\n   no shutdown\n   mtu 1500\n   no switchport\n   ip
+    address 192.168.103.22/31\n!\ninterface Ethernet6\n   description P2P_LINK_TO_LEAF4_Ethernet6\n
+    \  no shutdown\n   mtu 1500\n   no switchport\n   ip address 192.168.103.30/31\n!\ninterface
+    Loopback0\n   description EVPN_Overlay_Peering\n   no shutdown\n   ip address
+    192.168.101.14/32\n!\ninterface Management0\n   description oob_management\n   no
+    shutdown\n   vrf MGMT\n   ip address 192.168.0.14/24\n!\nip routing\nno ip routing
+    vrf MGMT\n!\nip prefix-list PL-LOOPBACKS-EVPN-OVERLAY\n   seq 10 permit 192.168.101.0/24
+    eq 32\n!\nip route vrf MGMT 0.0.0.0/0 192.168.0.1\n!\nroute-map RM-CONN-2-BGP
+    permit 10\n   match ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY\n!\nrouter
+    bfd\n   multihop interval 1200 min-rx 1200 multiplier 3\n!\nrouter bgp 65001\n
+    \  router-id 192.168.101.14\n   maximum-paths 4 ecmp 4\n   no bgp default ipv4-unicast\n
+    \  no bgp default ipv4-unicast\n   distance bgp 20 200 200\n   neighbor EVPN-OVERLAY-PEERS
+    peer group\n   neighbor EVPN-OVERLAY-PEERS next-hop-unchanged\n   neighbor EVPN-OVERLAY-PEERS
+    update-source Loopback0\n   neighbor EVPN-OVERLAY-PEERS bfd\n   neighbor EVPN-OVERLAY-PEERS
     ebgp-multihop 3\n   neighbor EVPN-OVERLAY-PEERS send-community\n   neighbor EVPN-OVERLAY-PEERS
     maximum-routes 0\n   neighbor IPv4-UNDERLAY-PEERS peer group\n   neighbor IPv4-UNDERLAY-PEERS
     send-community\n   neighbor IPv4-UNDERLAY-PEERS maximum-routes 12000\n   neighbor

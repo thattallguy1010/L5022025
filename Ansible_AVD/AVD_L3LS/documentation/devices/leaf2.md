@@ -6,6 +6,8 @@
   - [Management Interfaces](#management-interfaces)
   - [DNS Domain](#dns-domain)
   - [Management API HTTP](#management-api-http)
+- [Monitoring](#monitoring)
+  - [SNMP](#snmp)
 - [MLAG](#mlag)
   - [MLAG Summary](#mlag-summary)
   - [MLAG Device Configuration](#mlag-device-configuration)
@@ -106,6 +108,31 @@ management api http-commands
    !
    vrf MGMT
       no shutdown
+```
+
+## Monitoring
+
+### SNMP
+
+#### SNMP Configuration Summary
+
+| Contact | Location | SNMP Traps | State |
+| ------- | -------- | ---------- | ----- |
+| stevenforster10@gmail.com | FABRIC leaf2 | All | Disabled |
+
+#### SNMP Users Configuration
+
+| User | Group | Version | Authentication | Privacy | Remote Address | Remote Port | Engine ID |
+| ---- | ----- | ------- | -------------- | ------- | -------------- | ----------- | --------- |
+| SNMPv3Admin | network-admin | v3 | sha | aes | - | - | - |
+
+#### SNMP Device Configuration
+
+```eos
+!
+snmp-server contact stevenforster10@gmail.com
+snmp-server location FABRIC leaf2
+snmp-server user SNMPv3Admin network-admin v3 auth sha <removed> priv aes <removed>
 ```
 
 ## MLAG

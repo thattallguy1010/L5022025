@@ -130,6 +130,17 @@ vlan_internal_order:
   range:
     beginning: 1006
     ending: 1199
+snmp_server:
+  contact: stevenforster10@gmail.com
+  location: FABRIC leaf1
+  users:
+  - name: SNMPv3Admin
+    group: network-admin
+    version: v3
+    auth: sha
+    auth_passphrase: arista5ufc
+    priv: aes
+    priv_passphrase: arista5ufc
 spanning_tree:
   mode: mstp
   mst_instances:
