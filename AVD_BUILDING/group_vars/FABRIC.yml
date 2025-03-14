@@ -1,0 +1,11 @@
+---
+# Fabric settings
+fabric_name: DUAL_DC_FABRIC
+
+# IP Addressing
+ipv4_underlay_addressing:
+  p2p_links_mtu: 1500
+  p2p_links_ip_addressing: 'point-to-point'
+
+# EVPN settings
+evpn_vlan_aware_bundles: false

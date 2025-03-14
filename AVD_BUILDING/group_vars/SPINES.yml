@@ -1,0 +1,35 @@
+---
+type: spine
+
+ansible_host: 192.168.0.5 # Update with your actual management IPs
+
+# Spine switches
+spine:
+  defaults:
+    platform: vEOS-LAB
+    bgp_defaults:
+      - no bgp default ipv4-unicast
+      - distance bgp 20 200 200
+      - graceful-restart restart-time 300
+      - graceful-restart
+  node_groups:
+    DC1:
+      loopback_ipv4_pool: 10.1.252.0/24
+      bgp_as: 65001
+      nodes:
+        dc1-spine1:
+          id: 1
+          mgmt_ip: 192.168.0.11/24
+        dc1-spine2:
+          id: 2
+          mgmt_ip: 192.168.0.12/24
+    DC2:
+      loopback_ipv4_pool: 10.2.252.0/24
+      bgp_as: 65002
+      nodes:
+        dc2-spine1:
+          id: 1
+          mgmt_ip: 192.168.0.21/24
+        dc2-spine2:
+          id: 2
+          mgmt_ip: 192.168.0.22/24

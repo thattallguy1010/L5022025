@@ -1,0 +1,63 @@
+---
+# CVP server configuration
+ansible_connection: httpapi
+ansible_httpapi_use_ssl: true
+ansible_httpapi_validate_certs: false
+ansible_network_os: eos
+ansible_httpapi_port: 443
+
+# CVP Authentication information
+ansible_user: arista
+ansible_password: PASSWORD-GOES-HERE
+
+# Configuration deployment mode
+cv_configuration_mode: loose
+
+# Container topology
+cv_container_root: DC_Fabric
+cv_devices:
+  DC1:
+    parent_container: DC_Fabric
+  DC2:
+    parent_container: DC_Fabric
+
+# Device inventory to be configured and moved to containers
+cv_inventory:
+  spine1:
+    container: DC1
+    configlets:
+      - 'AVD-DC1-spine1'
+  spine2:
+    container: DC1
+    configlets:
+      - 'AVD-DC1-spine2'
+  leaf1:
+    container: DC1
+    configlets:
+      - 'AVD-DC1-leaf1'
+  leaf2:
+    container: DC1
+    configlets:
+      - 'AVD-DC1-leaf2'
+  spine3:
+    container: DC2
+    configlets:
+      - 'AVD-DC2-spine3'
+  spine4:
+    container: DC2
+    configlets:
+      - 'AVD-DC2-spine4'
+  leaf3:
+    container: DC2
+    configlets:
+      - 'AVD-DC2-leaf3'
+  leaf4:
+    container: DC2
+    configlets:
+      - 'AVD-DC2-leaf4'
+
+# Configlets definition
+cv_configlets:
+  containers:
+    DC_Fabric:
+      - 'AVD-GLOBAL'
