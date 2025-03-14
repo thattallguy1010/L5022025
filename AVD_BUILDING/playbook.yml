@@ -4,11 +4,11 @@
   gather_facts: false
   tasks:
     - name: Generate AVD structured configuration for DC1
-      import_role:
+      ansible.builtin.import_role:
         name: arista.avd.eos_designs
 
     - name: Generate device configuration and documentation for DC1
-      import_role:
+      ansible.builtin.import_role:
         name: arista.avd.eos_cli_config_gen
 
 - name: Build DC2 EVPN Fabric
@@ -16,11 +16,11 @@
   gather_facts: false
   tasks:
     - name: Generate AVD structured configuration for DC2
-      import_role:
+      ansible.builtin.import_role:
         name: arista.avd.eos_designs
 
     - name: Generate device configuration and documentation for DC2
-      import_role:
+      ansible.builtin.import_role:
         name: arista.avd.eos_cli_config_gen
 
 - name: Configuration deployment with CVP
@@ -37,7 +37,7 @@
     device_filter: ['all']
   tasks:
     - name: Run CVP provisioning
-      import_role:
+      ansible.builtin.import_role:
         name: arista.avd.eos_config_deploy_cvp
       vars:
         container_root: '{{container_root}}'

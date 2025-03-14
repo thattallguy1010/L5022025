@@ -1,6 +1,10 @@
 ---
-# Fabric settings
+# Common fabric variables
 fabric_name: DUAL_DC_FABRIC
+
+# BGP ASN
+bgp_asn: 65100
+overlay_loopback_network_summary: 10.255.0.0/27
 
 # IP Addressing
 ipv4_underlay_addressing:

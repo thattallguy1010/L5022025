@@ -1,14 +1,13 @@
 ---
 # DC2 specific settings
 fabric_name: DC2_FABRIC
+bgp_as: 65200
 
 # IP Addressing for DC2
-ipv4_underlay_addressing:
-  loopback_ipv4_pool: 10.2.252.0/24
-  loopback_ipv4_offset: 0
-  vtep_loopback_ipv4_pool: 10.2.253.0/24
-  vtep_loopback_ipv4_offset: 0
-  p2p_uplink_ipv4_pool: 10.2.254.0/24
+ipv4_underlay:
+  p2p_uplinks_ip: 172.32.255.0/24
+  loopback_ip: 192.169.255.0/24
+  vtep_ip: 192.169.254.0/24
 
 # Inter-DC spine connections (Eth1-2)
 spine_interfaces:
