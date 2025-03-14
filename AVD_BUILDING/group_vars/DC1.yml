@@ -1,6 +1,6 @@
 ---
 # DC1 specific settings
-fabric_name: DC1_FABRIC
+fabric_name: DC1
 bgp_as: 65100
 
 # IP Addressing for DC1
@@ -11,6 +11,6 @@ ipv4_underlay:
 
 # Inter-DC spine connections (Eth1-2)
 spine_interfaces:
-  dc1-spine1:
-    - {interface: Ethernet1, peer: dc1-spine2, peer_interface: Ethernet1}
-    - {interface: Ethernet2, peer: dc1-spine2, peer_interface: Ethernet2}
+  spine1:
+    - {interface: Ethernet1, peer: spine2, peer_interface: Ethernet1}
+    - {interface: Ethernet2, peer: spine2, peer_interface: Ethernet2}
